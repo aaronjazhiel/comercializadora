@@ -8,22 +8,35 @@ import {Favorito} from './models/favorito';
 import {TieredMenuModule} from 'primeng/tieredmenu';
 
 import {MenuModule} from 'primeng/menu';
+import {DropdownModule} from 'primeng/dropdown';
+import {SelectItem} from 'primeng/api';
+import {KeyFilterModule} from 'primeng/keyfilter';
+
 
 
 
 @Component({
     selector: 'app-root',
-    templateUrl: './views/home.html',
+    templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],
     providers: [CarService,FavoritoService]
 })
-export class AppComponent implements OnInit{
+export class AltaComponent implements OnInit{
+
+
+    ities1: SelectItem[];
+    
+    cities2: City[];
+
+    selectedCity1: City;
+    
+    selectedCity2: City;
+
+
 
     public title: string;
     public loading: boolean;
     
-	//public favorito: Favorito;
-	//public favoritos: Favorito[];
 	public errorMessage;
 
 	public confirmado;
@@ -61,20 +74,26 @@ export class AppComponent implements OnInit{
         ];
 
 
+        this.cities2 = [
+            {name: 'New York', code: 'NY'},
+            {name: 'Rome', code: 'RM'},
+            {name: 'London', code: 'LDN'},
+            {name: 'Istanbul', code: 'IST'},
+            {name: 'Paris', code: 'PRS'}
+        ];
       
 
         this.items = [
             {
-                label: 'Administración',
+                label: 'File',
                 items: [{
-                        label: 'catalogos',
-                        icon: 'fa-folder-open',
+                        label: 'New',
+                        icon: 'fa-plus',
                         items: [
-                            {label: 'Dependencias',routerLink: ['/listaFavoritos'],icon: 'fa-edit'},
-                            {label: 'Estados',routerLink: ['/angular'],icon: 'fa-edit'},
+                            
                         ]
                     },
-                    {label: 'Open'},
+                    {label: 'Open', routerLink: ['/crear-marcador']},
                     {label: 'Quit'}
                 ]
             },
@@ -201,4 +220,9 @@ export class AppComponent implements OnInit{
 export class PrimeCar implements Favorito {
     constructor(public _id?, public title?, public description?, public url?) {}
 }
+
+interface City {
+    name: string;
+    code: string;
+  }
 

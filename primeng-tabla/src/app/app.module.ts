@@ -12,12 +12,32 @@ import {MenuItem} from 'primeng/api';
 import { HttpModule, JsonpModule } from '@angular/http';
 import { AppComponent }  from './app.component';
 import {TieredMenuModule} from 'primeng/tieredmenu';
+import { routing, appRoutingProviders } from './app.routing';
+import { FavoritoDetailComponent } from './components/favorito-detail.component';
+import { FavoritosListComponent } from './components/favoritos-list.component';
+import { FavoritoAddComponent } from './components/favorito-add.component';
+import { FavoritoEditComponent } from './components/favorito-edit.component';
+import { AltaComponent}  from './app.alta.component';
+import {MenuModule} from 'primeng/menu';
+import {DropdownModule} from 'primeng/dropdown';
+import {SelectItem} from 'primeng/api';
+import {KeyFilterModule} from 'primeng/keyfilter';
+
+
+
+
 
 
 
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
+        FavoritoDetailComponent,
+        FavoritosListComponent,
+        FavoritoDetailComponent,
+        FavoritoAddComponent,
+        FavoritoEditComponent,
+        AltaComponent
     ],
     imports: [
         BrowserModule,
@@ -30,9 +50,15 @@ import {TieredMenuModule} from 'primeng/tieredmenu';
         ButtonModule,
         MenubarModule,
         HttpModule,
-        TieredMenuModule
+        TieredMenuModule,
+        routing,
+        MenuModule,
+        DropdownModule,
+        KeyFilterModule
+    
+        
     ],
-    providers: [],
+    providers: [appRoutingProviders ],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

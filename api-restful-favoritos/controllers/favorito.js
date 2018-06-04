@@ -58,7 +58,7 @@ function saveFavorito(req, res){
 	console.log(req.body);
 
 	
-	favorito.title = params.titulo;
+	favorito.title = params.title;
 	favorito.description = params.description;
 	favorito.url = params.url;
 

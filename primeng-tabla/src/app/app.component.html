@@ -1,5 +1,7 @@
 
-<p-table [columns]="cols" [value]="favoritos" selectionMode="single" [(selection)]="selectedCar" (onRowSelect)="onRowSelect($event)" [paginator]="true" rows="10">
+
+
+<p-table [columns]="cols" [value]="favoritos" selectionMode="single" [(selection)]="selectedCar" (onRowSelect)="onRowSelect($event)" [paginator]="true" rows="10" >
     <ng-template pTemplate="header" let-columns>
         <tr>
             <th *ngFor="let col of columns">
@@ -27,8 +29,11 @@
         <div class="ui-g-4"><label for="vin">Vinnnnn</label></div>
         <div class="ui-g-8"><input pInputText id="_id" [(ngModel)]="favorito._id" /></div>
         
-        <div class="ui-g-4"><label for="titulo">Year</label></div>
-        <div class="ui-g-8"><input pInputText id="titulo" [(ngModel)]="favorito.titulo" /></div>
+        <div class="ui-g-4"><label for="title">Cuantos carros</label></div>
+        <div class="ui-g-8"><input pInputText pKeyFilter="int" placeholder="Integers" id="title" [(ngModel)]="favorito.title" /></div>
+       
+        <div class="ui-g-4"><label for="title">Ciudades</label></div>
+        <div class="ui-g-8"><p-dropdown [options]="cities2" [(ngModel)]="selectedCity2" optionLabel="name" placeholder="Select a City" [showClear]="true" [style]="{'width':'150px'}"></p-dropdown></div>
         
         <div class="ui-g-4"><label for="description">Brand</label></div>
         <div class="ui-g-8"><input pInputText id="description" [(ngModel)]="favorito.description" /></div>
