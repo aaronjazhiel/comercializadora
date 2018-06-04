@@ -7,8 +7,8 @@ import { InputTextModule }  from 'primeng/inputtext';
 import { ButtonModule }  from 'primeng/button';
 import { TableModule }  from 'primeng/table';
 import { DialogModule }  from 'primeng/dialog';
-import {MenubarModule} from 'primeng/menubar';
-import {MenuItem} from 'primeng/api';
+//import {MenubarModule} from 'primeng/menubar';
+//import {MenuItem} from 'primeng/api';
 import { HttpModule, JsonpModule } from '@angular/http';
 import { AppComponent }  from './app.component';
 import {TieredMenuModule} from 'primeng/tieredmenu';
@@ -24,6 +24,7 @@ import {SelectItem} from 'primeng/api';
 import {KeyFilterModule} from 'primeng/keyfilter';
 import {PanelModule} from 'primeng/panel';
 import {PasswordModule} from 'primeng/password';
+import { MenubarModule, MenuItem } from 'primeng/primeng';
 
 
 
