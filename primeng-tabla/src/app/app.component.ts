@@ -45,30 +45,7 @@ export class AppComponent implements OnInit{
     constructor(private carService: CarService, private _favoritoService: FavoritoService) { }
     
     ngOnInit() {
-        this.items = [
-            {
-                label: 'Administración',
-                items: [{
-                        label: 'catalogos',
-                        icon: 'fa-folder-open',
-                        items: [
-                            {label: 'Dependencias',routerLink: ['/listaFavoritos'],icon: 'fa-edit'},
-                            {label: 'Estados',routerLink: ['/angular'],icon: 'fa-edit'},
-                        ]
-                    },
-                    {label: 'Open'},
-                    {label: 'Quit'}
-                ]
-            },
-            {
-                label: 'Edit',
-                icon: 'fa-edit',
-                items: [
-                    {label: 'Undo', icon: 'fa-mail-forward'},
-                    {label: 'Redo', icon: 'fa-mail-reply'}
-                ]
-            }
-        ];
+      
         
     }
 

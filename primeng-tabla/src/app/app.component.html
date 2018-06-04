@@ -1,6 +1,8 @@
 
 
+<p-menubar [model]="items"></p-menubar>
 
+<div   class="favorito-box" >
 <p-table [columns]="cols" [value]="favoritos" selectionMode="single" [(selection)]="selectedCar" (onRowSelect)="onRowSelect($event)" [paginator]="true" rows="10" >
     <ng-template pTemplate="header" let-columns>
         <tr>
@@ -23,7 +25,7 @@
         </div>
     </ng-template>
 </p-table>
-
+</div>
 <p-dialog header="Favorito Details" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true" [closable]="true" [width]="300">
     <div class="ui-g ui-fluid" *ngIf="favorito">
         <div class="ui-g-4"><label for="vin">Vinnnnn</label></div>

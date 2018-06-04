@@ -82,18 +82,18 @@ export class AltaComponent implements OnInit{
             {name: 'Paris', code: 'PRS'}
         ];
       
-
         this.items = [
             {
-                label: 'File',
+                label: 'Administración',
                 items: [{
-                        label: 'New',
-                        icon: 'fa-plus',
+                        label: 'catalogos',
+                        icon: 'fa-folder-open',
                         items: [
-                            
+                            {label: 'Dependencias',routerLink: ['/listaFavoritos'],icon: 'fa-edit'},
+                            {label: 'Estados',routerLink: ['/angular'],icon: 'fa-edit'},
                         ]
                     },
-                    {label: 'Open', routerLink: ['/crear-marcador']},
+                    {label: 'Open'},
                     {label: 'Quit'}
                 ]
             },

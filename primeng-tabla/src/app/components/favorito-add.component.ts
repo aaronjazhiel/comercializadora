@@ -70,4 +70,10 @@ export class FavoritoAddComponent implements OnInit{
 
 	}
 
+
+	public login(){  
+		this._router.navigate(['/angular']);
+
+	}
+
 }
