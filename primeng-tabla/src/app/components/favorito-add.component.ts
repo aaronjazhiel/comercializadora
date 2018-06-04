@@ -4,6 +4,23 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 import { FavoritoService } from '../services/favorito.service';
 import { Favorito } from '../models/favorito';
 
+
+
+import {MenubarModule} from 'primeng/menubar';
+import {MenuItem} from 'primeng/api';
+
+import {TieredMenuModule} from 'primeng/tieredmenu';
+
+import {MenuModule} from 'primeng/menu';
+import {DropdownModule} from 'primeng/dropdown';
+import {SelectItem} from 'primeng/api';
+import {KeyFilterModule} from 'primeng/keyfilter';
+import {PanelModule} from 'primeng/panel';
+import {PasswordModule} from 'primeng/password';
+
+
+
+
 @Component({
     selector: 'favorito-add',
     templateUrl: '../views/favorito-add.html',

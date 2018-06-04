@@ -1,24 +1,27 @@
-<div class="favorito-box">
-	<h1>{{titleSection}}</h1>
 
-	<form #formFavorito="ngForm" (ngSubmit)="onSubmit()">
-		<label>Titulo:</label>
-		<p>
-			<input type="text" name="title" #title="ngModel" [(ngModel)]="favorito.title" required/>
-			<span *ngIf="title.touched && !title.valid">El titulo no es correcto!!</span> 
-		</p>
-
-		<label>Descripción:</label>
-		<p>
-			<textarea name="description" #description="ngModel" [(ngModel)]="favorito.description" required ></textarea> 
-			<span *ngIf="description.touched && !description.valid">La descripción no es correcta!!</span> 
-		</p>
-
-		<label>URL:</label>
-		<p>
-			<input type="url" name="url" #url="ngModel" [(ngModel)]="favorito.url" required /><span *ngIf="url.touched && !url.valid">Introduce una url correcta!!</span> 
-		</p>
-
-		<input type="submit" value="{{titleSection}}">
-	</form>
-</div>
+<p-panel >
+		<p-header>
+			Inicio de Sessión Adkhancy
+		</p-header>
+		
+<div   class="favorito-box" >
+    
+		<div class="ui-g-12 ui-md-4">
+			<div class="ui-inputgroup">
+					<div class="ui-g-4"><label for="vin">Usuario</label></div>
+				<span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
+				<input type="text" pInputText placeholder="Usuario">         
+			</div>
+			<div class="ui-inputgroup">
+				
+					<div class="ui-g-4"><label for="vin">Contraseña</label></div>
+				<span class="ui-inputgroup-addon"><i class="fa-cogs"></i></span>
+				 <input type="password" pPassword weakLabel ="El password es muy debíl"/>        
+			</div>
+			
+		</div>
+	</div>
+		<p-footer>
+				<button pButton type="button" label="Login" ></button>
+		</p-footer>
+	</p-panel>

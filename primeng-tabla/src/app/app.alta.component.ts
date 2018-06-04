@@ -192,10 +192,37 @@ export class AltaComponent implements OnInit{
     }
     
     delete() {
+
+
+
+
+
         const index = this.findSelectedCarIndex();
         this.favoritos = this.favoritos.filter((val, i) => i != index);
-        this.favorito = null;
-        this.displayDialog = false;
+
+        console.log('id***'+   this.favoritos[0]._id );
+        
+        this._favoritoService.deleteFavorito(this.favoritos[0]._id).subscribe(
+			result => {
+				if(!result.message){
+					alert('Error en la petición');
+				}
+                this.getFavoritos();
+                this.favorito = null;
+                this.displayDialog = false;
+			},
+			error => {
+				this.errorMessage = <any>error;
+
+				if(this.errorMessage != null){
+					console.log(this.errorMessage);
+					alert('Error en la petición');
+				}
+			}
+		);
+        
+        
+       
     }
     
     onRowSelect(event) {

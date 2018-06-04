@@ -22,6 +22,8 @@ import {MenuModule} from 'primeng/menu';
 import {DropdownModule} from 'primeng/dropdown';
 import {SelectItem} from 'primeng/api';
 import {KeyFilterModule} from 'primeng/keyfilter';
+import {PanelModule} from 'primeng/panel';
+import {PasswordModule} from 'primeng/password';
 
 
 
@@ -54,9 +56,10 @@ import {KeyFilterModule} from 'primeng/keyfilter';
         routing,
         MenuModule,
         DropdownModule,
-        KeyFilterModule
-    
-        
+        KeyFilterModule,
+        PanelModule,
+        PasswordModule
+
     ],
     providers: [appRoutingProviders ],
     bootstrap: [AppComponent]
