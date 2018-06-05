@@ -10,7 +10,7 @@ export class FavoritoService{
 	public url: string;
 	
 	constructor(private _http: Http){
-		this.url = 'http://18.217.37.159:3678/api/';
+		this.url = 'http://localhost:3678/api/';
 	}
 
 	getFavoritos(){
@@ -35,10 +35,14 @@ export class FavoritoService{
 	}
 
 	editFavorito(id: string, favorito: Favorito){
+       console.log('se  manipula log'+favorito);
+
 		let json = JSON.stringify(favorito);
 		let params = json;
-		let headers = new Headers({'Content-Type':'application/json'});
 
+
+		let headers = new Headers({'Content-Type':'application/json'});
+ console.log('se  manipula log----'+ params);
 		return this._http.put(this.url+'favorito/'+id, params, {headers: headers})
 							   .map(res => res.json());
 	}

@@ -75,6 +75,9 @@ function updateFavorito(req, res){
 	var favoritoId = req.params.id;
 	var update = req.body;
 
+	console.log('id'+favoritoId);
+	console.log('cuerpo'+req.body);
+
 	Favorito.findByIdAndUpdate(favoritoId, update, (err, favoritoUpdated) => {
 			if(err){
 				res.status(500).send({message: 'Error al actualizar el marcador'});

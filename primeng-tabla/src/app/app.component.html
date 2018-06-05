@@ -26,7 +26,7 @@
     </ng-template>
 </p-table>
 </div>
-<p-dialog header="Favorito Details" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true" [closable]="true" [width]="300">
+<p-dialog header="Favorito Details" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true" [closable]="true" [width]="500">
     <div class="ui-g ui-fluid" *ngIf="favorito">
         <div class="ui-g-4"><label for="vin">Vinnnnn</label></div>
         <div class="ui-g-8"><input pInputText id="_id" [(ngModel)]="favorito._id" /></div>
@@ -45,8 +45,9 @@
     </div>
     <p-footer>
         <div class="ui-dialog-buttonpane ui-helper-clearfix">
-            <button type="button" pButton icon="fa-close" (click)="delete()" label="Deleteyyy"></button>
-            <button type="button" pButton icon="fa-check" (click)="save()" label="Save"></button>
+            <button type="button" pButton icon="fa-check" (click)="modificar()" label="Modificar" ></button>
+            <button type="button" pButton icon="fa-close" (click)="delete()" label="Eliminar"></button>
+            <button type="button" pButton icon="fa-check" (click)="save()" label="Guardar"></button>
         </div>
     </p-footer>
 </p-dialog>

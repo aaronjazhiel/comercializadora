@@ -11,6 +11,8 @@ import {MenuModule} from 'primeng/menu';
 import {DropdownModule} from 'primeng/dropdown';
 import {SelectItem} from 'primeng/api';
 import {KeyFilterModule} from 'primeng/keyfilter';
+import { Router, ActivatedRoute, Params } from '@angular/router';
+
 
 
 
@@ -56,7 +58,8 @@ export class AltaComponent implements OnInit{
            
     items: MenuItem[];
     
-    constructor(private carService: CarService, private _favoritoService: FavoritoService) { }
+    constructor(private carService: CarService, private _favoritoService: FavoritoService,	private _route: ActivatedRoute,
+		private _router: Router) { }
     
     ngOnInit() {
         
@@ -109,6 +112,44 @@ export class AltaComponent implements OnInit{
         
     }
 
+    public modificar(){
+
+        this._favoritoService.editFavorito(this.favorito._id,this.favorito).subscribe(
+			response => {
+				if(!response.favorito){
+					alert('Error en el servidor');
+				}else{
+                    this.favorito = response.favorito;
+                   
+                    
+                    const favoritos = [...this.favoritos];
+                    if (this.newCar) {
+                        favoritos.push(this.favorito);
+                        
+                    } else {
+                        
+                        favoritos[this.findSelectedCarIndex()] = this.favorito;
+                    }
+                   
+			        this.getFavoritos();
+			        this.favoritos = favoritos;
+                    this.favorito = null;
+                    this.displayDialog = false;
+                }				
+			},
+			error => {
+				this.errorMessage = <any>error;
+
+				if(this.errorMessage != null){
+					console.log(this.errorMessage);
+					alert('Error en la petición');
+				}
+			}
+		);
+        
+
+
+    }
     
 
     
@@ -144,18 +185,16 @@ export class AltaComponent implements OnInit{
 					alert('Error en el servidor');
 				}else{
                     this.favorito = response.favorito;
-                   
-                    
                     const favoritos = [...this.favoritos];
                     if (this.newCar) {
                         favoritos.push(this.favorito);
                     } else {
-                        favoritos[this.findSelectedCarIndex()] = this.favorito;
+                       favoritos[this.findSelectedCarIndex()] = this.favorito;
                     }
-                    this.favoritos = favoritos;
+                    this.getFavoritos();
+			        this.favoritos = favoritos;
                     this.favorito = null;
                     this.displayDialog = false;
-			       
                 }				
 			},
 			error => {
@@ -167,7 +206,6 @@ export class AltaComponent implements OnInit{
 				}
 			}
 		);
-
 	}
 
     
@@ -177,32 +215,10 @@ export class AltaComponent implements OnInit{
         this.displayDialog = true;
     }
     
-    save_prueba() {
-         
-       
-        const favoritos = [...this.favoritos];
-        if (this.newCar) {
-            favoritos.push(this.favorito);
-        } else {
-            favoritos[this.findSelectedCarIndex()] = this.favorito;
-        }
-        this.favoritos = favoritos;
-        this.favorito = null;
-        this.displayDialog = false;
-    }
+
     
     delete() {
-
-
-
-
-
-        const index = this.findSelectedCarIndex();
-        this.favoritos = this.favoritos.filter((val, i) => i != index);
-
-        console.log('id***'+   this.favoritos[0]._id );
-        
-        this._favoritoService.deleteFavorito(this.favoritos[0]._id).subscribe(
+        this._favoritoService.deleteFavorito(this.favorito._id).subscribe(
 			result => {
 				if(!result.message){
 					alert('Error en la petición');
