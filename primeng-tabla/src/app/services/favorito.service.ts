@@ -10,7 +10,7 @@ export class FavoritoService{
 	public url: string;
 	
 	constructor(private _http: Http){
-		this.url = 'http://18.217.37.159:3678/api/';
+		this.url = 'http://18.218.239.167:3678/api/';
 	}
 
 	getFavoritos(){
