@@ -93,7 +93,7 @@ export class AltaComponent implements OnInit{
                         icon: 'fa-folder-open',
                         items: [
                             {label: 'Dependencias',routerLink: ['/listaFavoritos'],icon: 'fa-edit'},
-                            {label: 'Estados',routerLink: ['/angular'],icon: 'fa-edit'},
+                            {label: 'Estados',routerLink: ['/adkhancy'],icon: 'fa-edit'},
                         ]
                     },
                     {label: 'Open'},

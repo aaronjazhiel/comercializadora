@@ -12,13 +12,13 @@ import { AltaComponent }  from './app.alta.component';
 
 
 const appRoutes: Routes = [
-	{path: '', component: FavoritosListComponent },
-	{path: 'listaFavoritos', component: FavoritosListComponent },   
-	{path: 'angular', component: AltaComponent  },                                                        
-	{path: 'marcador/:id', component: FavoritoDetailComponent },
-    {path: 'crear-marcador', component: FavoritoAddComponent },
-	{path: 'editar-marcador/:id', component: FavoritoEditComponent },
-	{path: '**', component: FavoritosListComponent }
+	{path: '', component: FavoritoAddComponent },
+	//{path: 'listaFavoritos', component: FavoritosListComponent },   
+	{path: 'adkhancy', component: AltaComponent  },                                                        
+	//{path: 'marcador/:id', component: FavoritoDetailComponent },
+    //{path: 'crear-marcador', component: FavoritoAddComponent },
+	//{path: 'editar-marcador/:id', component: FavoritoEditComponent },
+	{path: '**', component: FavoritoAddComponent }
 ];
 
 export const appRoutingProviders: any[] = [];

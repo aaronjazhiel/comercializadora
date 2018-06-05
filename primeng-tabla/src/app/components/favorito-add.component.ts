@@ -72,7 +72,7 @@ export class FavoritoAddComponent implements OnInit{
 
 
 	public login(){  
-		this._router.navigate(['/angular']);
+		this._router.navigate(['/adkhancy']);
 
 	}
 
