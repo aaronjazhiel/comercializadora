@@ -12,6 +12,7 @@ import {DropdownModule} from 'primeng/dropdown';
 import {SelectItem} from 'primeng/api';
 import {KeyFilterModule} from 'primeng/keyfilter';
 import { Router, ActivatedRoute, Params } from '@angular/router';
+import {InputTextModule} from 'primeng/inputtext';
 
 
 
@@ -70,24 +71,22 @@ export class AltaComponent implements OnInit{
         
 
         this.cols = [
-            { field: '_id', header: 'id' },
-            { field: 'title', header: 'title' },
-            { field: 'description', header: 'description' },
-            { field: 'url', header: 'url' }
+           // { field: '_id', header: 'id' },
+            { field: 'title', header: 'color' },
+            { field: 'description', header: 'cantidad(m)' }
+            //{ field: 'url', header: 'url' }
         ];
 
 
         this.cities2 = [
-            {name: 'New York', code: 'NY'},
-            {name: 'Rome', code: 'RM'},
-            {name: 'London', code: 'LDN'},
-            {name: 'Istanbul', code: 'IST'},
-            {name: 'Paris', code: 'PRS'}
+            {name: 'rojo', code: 'NY'},
+            
+            {name: 'blanco', code: 'PRS'}
         ];
       
         this.items = [
             {
-                label: 'Administración',
+                label: 'Pedimentos',
                 items: [{
                         label: 'catalogos',
                         icon: 'fa-folder-open',

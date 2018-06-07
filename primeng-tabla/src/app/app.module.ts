@@ -32,6 +32,8 @@ import { MenubarModule, MenuItem } from 'primeng/primeng';
 
 
 
+
+
 @NgModule({
     declarations: [
         AppComponent,
@@ -60,6 +62,7 @@ import { MenubarModule, MenuItem } from 'primeng/primeng';
         KeyFilterModule,
         PanelModule,
         PasswordModule
+      
 
     ],
     providers: [appRoutingProviders ],

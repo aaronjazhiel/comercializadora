@@ -20,9 +20,11 @@ body{
 	background: #eee;
 }
 
+
+
 header{
 	padding: 15px;
-	background: #227191;
+	background: #419ecd;
 }
 
 header .title-subtitle{
@@ -57,8 +59,8 @@ header p{
 header #logo{
 	display: block;
 	float: left;
-	margin-top: 10px;
-    width: 65px;
+	margin-top: -6px;
+    width: 190px;
 }
 
 .btn-add-favorito{

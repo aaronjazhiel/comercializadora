@@ -3,6 +3,11 @@
 <p-menubar [model]="items"></p-menubar>
 
 <div   class="favorito-box" >
+
+   
+     Numero Pedimento:    <input type="text" pInputText />
+
+ 
 <p-table [columns]="cols" [value]="favoritos" selectionMode="single" [(selection)]="selectedCar" (onRowSelect)="onRowSelect($event)" [paginator]="true" rows="10" >
     <ng-template pTemplate="header" let-columns>
         <tr>
@@ -21,33 +26,40 @@
 
     <ng-template pTemplate="summary" let-rowData>
         <div style="text-align:left">
-            <button type="button" pButton icon="fa-plus" (click)="showDialogToAdd()" label="Add"></button>
+            <button type="button" pButton icon="fa-plus" (click)="showDialogToAdd()" label="Enviar a entradas"></button>
         </div>
     </ng-template>
 </p-table>
 </div>
-<p-dialog header="Favorito Details" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true" [closable]="true" [width]="500">
+<p-dialog header="Solicitud del Pedido" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true" [closable]="true" [width]="400" >
     <div class="ui-g ui-fluid" *ngIf="favorito">
-        <div class="ui-g-4"><label for="vin">Vinnnnn</label></div>
+        <!--<div class="ui-g-4"><label for="vin">Vinnnnn</label></div>
         <div class="ui-g-8"><input pInputText id="_id" [(ngModel)]="favorito._id" /></div>
         
         <div class="ui-g-4"><label for="title">Cuantos carros</label></div>
-        <div class="ui-g-8"><input pInputText pKeyFilter="int" placeholder="Integers" id="title" [(ngModel)]="favorito.title" /></div>
+        <div class="ui-g-8"><input pInputText pKeyFilter="int" placeholder="Integers" id="title" [(ngModel)]="favorito.title" /></div>-->
        
-        <div class="ui-g-4"><label for="title">Ciudades</label></div>
-        <div class="ui-g-8"><p-dropdown [options]="cities2" [(ngModel)]="selectedCity2" optionLabel="name" placeholder="Select a City" [showClear]="true" [style]="{'width':'150px'}"></p-dropdown></div>
-        
-        <div class="ui-g-4"><label for="description">Brand</label></div>
-        <div class="ui-g-8"><input pInputText id="description" [(ngModel)]="favorito.description" /></div>
-        
-        <div class="ui-g-4"><label for="url">Color</label></div>
-        <div class="ui-g-8"><input pInputText id="url" [(ngModel)]="favorito.url" /></div>
+        <!--<div class="ui-g-4"><label for="title">Color</label></div>
+            <div class="ui-g-8"><input pInputText id="url" [(ngModel)]="favorito.url" /></div>
+
+ -->
+
+       
+ <div class="ui-g-4"><label for="description">Color</label></div>
+       
+       
+ <div class="ui-g-8"><input pInputText id="description" [(ngModel)]="favorito.title" /></div>
+
+ <div class="ui-g-4"><label for="url">Cantidad</label></div>
+ <div class="ui-g-8"><input pInputText pKeyFilter="int" placeholder="Cantidad" id="title" [(ngModel)]="favorito.description" /></div>
+
+
     </div>
     <p-footer>
         <div class="ui-dialog-buttonpane ui-helper-clearfix">
-            <button type="button" pButton icon="fa-check" (click)="modificar()" label="Modificar" ></button>
-            <button type="button" pButton icon="fa-close" (click)="delete()" label="Eliminar"></button>
-            <button type="button" pButton icon="fa-check" (click)="save()" label="Guardar"></button>
+                <div class="ui-g-4"> <button type="button" pButton icon="fa-check" (click)="modificar()" label="Modificar" ></button></div>
+                <div class="ui-g-4">     <button type="button" pButton icon="fa-close" (click)="delete()" label="Eliminar"></button></div>
+                  <!--  <div class="ui-g-4">     <button type="button" pButton icon="fa-check" (click)="save()" label="Guardar"></button></div>-->
         </div>
     </p-footer>
 </p-dialog>
