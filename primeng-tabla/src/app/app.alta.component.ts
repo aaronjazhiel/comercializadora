@@ -87,24 +87,32 @@ export class AltaComponent implements OnInit{
         this.items = [
             {
                 label: 'Pedimentos',
-                items: [{
-                        label: 'catalogos',
-                        icon: 'fa-folder-open',
-                        items: [
-                            {label: 'Dependencias',routerLink: ['/listaFavoritos'],icon: 'fa-edit'},
-                            {label: 'Estados',routerLink: ['/adkhancy'],icon: 'fa-edit'},
-                        ]
-                    },
-                    {label: 'Open'},
-                    {label: 'Quit'}
+                items: [
+                    {label: 'Solicitud',routerLink: ['/adkhancy'],icon: 'fa-edit'},
+                    {label: 'Bitácora',routerLink: ['/adkhancy'],icon: 'fa-edit'}
                 ]
             },
             {
-                label: 'Edit',
-                icon: 'fa-edit',
+                label: 'Entradas',
+            
                 items: [
-                    {label: 'Undo', icon: 'fa-mail-forward'},
-                    {label: 'Redo', icon: 'fa-mail-reply'}
+                    {label: 'Aprobación', icon: 'fa-check'},
+                ]
+            },
+            {
+                label: 'Salidas',
+            
+                items: [
+                    {label: 'Aprobación', icon: 'fa-check'},
+                ]
+            }
+            ,
+            {
+                label: 'Almacén',
+             
+                items: [
+                    {label: 'Monitor', icon: 'fa-bar-chart'},
+                    {label: 'Salir',routerLink: ['/listaFavoritos'],icon: 'fa-power-off'}
                 ]
             }
         ];
